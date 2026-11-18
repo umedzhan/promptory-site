@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Promptory — Email tasdiqlandi</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; min-height: 100vh;
+         display: grid; place-items: center; padding: 24px 16px; box-sizing: border-box; text-align: center; }
+  .card { max-width: 420px; }
+  .logo { width: 88px; height: 88px; border-radius: 24px; margin: 0 auto 24px; display: grid; place-items: center;
+          background: linear-gradient(135deg, #0EA5E9, #6366F1); }
+  h1 { font-size: 1.6rem; margin: 0 0 .5rem; }
+  p { line-height: 1.6; opacity: .85; margin: .4rem 0; }
+  .err { display: none; color: #DC2626; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">
+    <svg width="56" height="56" viewBox="20 20 68 68" fill="none" aria-hidden="true">
+      <path d="M35,40 L50,54 L35,68" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M57,70 H73" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+      <path d="M72,28 Q73.8,35.2 81,37 Q73.8,38.8 72,46 Q70.2,38.8 63,37 Q70.2,35.2 72,28 Z" fill="#fff"/>
+    </svg>
+  </div>
+  <div id="ok">
+    <h1>Email tasdiqlandi ✓</h1>
+    <p>Endi Promptory ilovasiga qaytib, email va parolingiz bilan kiring.</p>
+    <p lang="en"><small>Email confirmed. Return to the Promptory app and sign in.</small></p>
+  </div>
+  <div id="err" class="err">
+    <h1>Havola eskirgan</h1>
+    <p>Tasdiqlash havolasi eskirgan yoki allaqachon ishlatilgan. Ilovada qaytadan kirib ko'ring:
+       hisob tasdiqlangan bo'lsa, kirish ishlaydi.</p>
+    <p lang="en"><small>This link has expired or was already used. Try signing in to the app.</small></p>
+  </div>
+</div>
+<script>
+  // Supabase xatoni URL'ning # qismida qaytaradi: #error=...&error_code=otp_expired
+  if (/error=/.test(location.hash + location.search)) {
+    document.getElementById('ok').style.display = 'none';
+    document.getElementById('err').style.display = 'block';
+  }
+</script>
+</body>
+</html>
