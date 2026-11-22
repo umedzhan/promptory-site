@@ -55,6 +55,10 @@ ilovaning barcha foydalanuvchilariga ko'rinadi. Email manzilingiz hech kimga ko'
 OpenAI API orqali yuborilgan ma'lumotlarni o'z modellarini o'qitish uchun ishlatmaydi. Biz prompt matnini
 va AI javobini saqlamaymiz; faqat kunlik limit uchun vaqt, tur (matn/rasm), model va token sonini qayd etamiz.
 AI javobiga shikoyat qilsangiz, shikoyat bilan birga prompt va javob matni moderatorga saqlanadi.</p>
+<p><b>Rasm asosida yaratish (Pro):</b> o'zingiz tanlagan rasm (masalan, yuzingiz tasviri) faqat natija yaratish
+uchun OpenAI'ga yuboriladi. U bizning serverimizda <b>saqlanmaydi</b> va faqat so'rov davomida xotirada turadi.
+Rasm ham xavfsizlik tekshiruvidan (moderatsiya) o'tadi. Biz yuzni tanish yoki biometrik ma'lumot olish uchun
+rasmlardan foydalanmaymiz.</p>
 
 <h2>3.1. Xato hisobotlari</h2>
 <p>Ilova kutilmagan xatoga uchrasa, bizga xato matni, texnik iz (stack trace), ilova versiyasi va platforma
@@ -125,6 +129,9 @@ Your email address is never shown to anyone.</p>
 OpenAI does not use data sent via its API to train its models. We do not store the prompt text or the AI response;
 we only record the time, type (text/image), model and token counts for daily limits.
 If you report an AI response, the prompt and response are stored with the report for moderators.</p>
+<p><b>Generating from your photo (Pro):</b> a photo you choose (for example, of your face) is sent to OpenAI only to
+generate the result. It is <b>not stored</b> on our servers and stays in memory only for the duration of the request.
+The photo is also checked by moderation. We do not use photos for face recognition or to derive biometric data.</p>
 
 <h2>3.1. Error reports</h2>
 <p>If the app hits an unexpected error, it sends us the error message, technical trace (stack trace), app version
